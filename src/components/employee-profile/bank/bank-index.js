@@ -7,9 +7,6 @@ import { Link } from "react-router-dom";
 import MyAppBar from "../../appBar";
 
 const styles = theme => ({
-  button: {
-    margin: theme.spacing(1)
-  },
   label: {
     paddingRight: 10
   }
@@ -70,7 +67,6 @@ class BankIndex extends Component {
                 <Button
                   variant="contained"
                   color="secondary"
-                  className={classes.button}
                   onClick={this.handleDeleteBankAccount.bind(this, bank.bankId)}
                 >
                   X
@@ -80,7 +76,7 @@ class BankIndex extends Component {
           </ul>
           <br />
           <br />
-          <Button variant="outlined" color="primary" className={classes.button}>
+          <Button variant="outlined" color="primary">
             <Link to="/bank/add">ADD</Link>
           </Button>
         </div>
