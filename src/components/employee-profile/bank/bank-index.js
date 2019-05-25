@@ -8,7 +8,8 @@ import MyAppBar from "../../appBar";
 
 const styles = theme => ({
   button: {
-    width: 30
+    width: 30,
+    marginRight: 5
   }
 });
 
@@ -54,20 +55,39 @@ class BankIndex extends Component {
         <MyAppBar />
         <div className="container-fluid">
           <div className="row">
-            <b className="col-sm-3">Account Type</b>
-            <b className="col-sm-3">Account No</b>
-            <b className="col-sm-3">Expiration Date</b>
-            <b className="col-sm-3">&nbsp;</b>
+            <b className="col-sm-3 d-none d-sm-block">Account Type</b>
+            <b className="col-sm-3 d-none d-sm-block">Account No</b>
+            <b className="col-sm-3 d-none d-sm-block">Expiration Date</b>
+            <b className="col-sm-3 d-none d-sm-block">Action</b>
           </div>
           <ul style={{ listStyleType: "none" }}>
             {this.state.banks.map((bank, index) => (
               <li className="row" style={{ marginTop: 10 }} key={index}>
-                <Link to={"/bank/edit/" + bank.bankId} className="col-sm-3">
+                <label className="col-sm-3">
+                  <b style={{ color: "black" }} className="d-inline d-sm-none">
+                    Account Type:{" "}
+                  </b>
                   {bank.name}
-                </Link>
-                <label className="col-sm-3">{bank.accountNo}</label>
-                <label className="col-sm-3">{bank.expiration}</label>
+                </label>
+
+                <label className="col-sm-3">
+                  <b className="d-inline d-sm-none">Account No: </b>
+                  {bank.accountNo}
+                </label>
+                <label className="col-sm-3">
+                  <b className="d-inline d-sm-none">Expiration Date: </b>
+                  {bank.expiration}
+                </label>
                 <div className="col-sm-3">
+                  <Link to={"/bank/edit/" + bank.bankId}>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      className={classes.button}
+                    >
+                      EDIT
+                    </Button>
+                  </Link>
                   <Button
                     variant="contained"
                     color="secondary"
@@ -77,7 +97,7 @@ class BankIndex extends Component {
                     )}
                     className={classes.button}
                   >
-                    X
+                    DELETE
                   </Button>
                 </div>
               </li>
