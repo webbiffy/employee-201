@@ -60,8 +60,9 @@ class MyAppBar extends Component {
               className={classes.menuButton}
               color="inherit"
               aria-label="Menu"
+              onClick={toggleDrawer(true)}
             >
-              <MenuIcon onClick={toggleDrawer(true)} />
+              <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit">
               <Link

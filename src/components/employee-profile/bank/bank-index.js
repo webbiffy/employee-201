@@ -8,7 +8,7 @@ import MyAppBar from "../../appBar";
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit
+    margin: theme.spacing(1)
   },
   label: {
     paddingRight: 10

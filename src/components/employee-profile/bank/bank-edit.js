@@ -9,12 +9,7 @@ import MyAppBar from "../../appBar";
 
 const styles = theme => ({
   textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
     width: 200
-  },
-  button: {
-    margin: theme.spacing.unit
   }
 });
 
@@ -99,12 +94,13 @@ class BankEdit extends Component {
           <Button
             variant="contained"
             color="primary"
-            className={classes.button}
             onClick={this.handleAddBankAccountsOnClick}
           >
             SAVE
           </Button>
-          <Link to="/bank">Back</Link>
+          <Link style={{ marginLeft: 10 }} to="/bank">
+            Back
+          </Link>
         </div>
       </React.Fragment>
     );
