@@ -13,6 +13,6 @@ body {
   box-sizing: border-box;
 }
 
-.container-wrapper {
-  padding: 1.3rem;
+.container-fluid {
+  padding: 20px 20px 0;
 }

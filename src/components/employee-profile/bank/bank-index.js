@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 // import BankItem from "./components/bank/bank-item";
-import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import MyAppBar from "../../appBar";
 
 const styles = theme => ({
-  label: {
-    paddingRight: 10
+  button: {
+    width: 30
   }
 });
 
@@ -52,25 +52,34 @@ class BankIndex extends Component {
     return (
       <React.Fragment>
         <MyAppBar />
-        <div className="container-wrapper">
+        <div className="container-fluid">
+          <div className="row">
+            <b className="col-sm-3">Account Type</b>
+            <b className="col-sm-3">Account No</b>
+            <b className="col-sm-3">Expiration Date</b>
+            <b className="col-sm-3">&nbsp;</b>
+          </div>
           <ul style={{ listStyleType: "none" }}>
             {this.state.banks.map((bank, index) => (
-              <li key={index}>
-                <Link
-                  to={"/bank/edit/" + bank.bankId}
-                  className={classes.label}
-                >
+              <li className="row" style={{ marginTop: 10 }} key={index}>
+                <Link to={"/bank/edit/" + bank.bankId} className="col-sm-3">
                   {bank.name}
                 </Link>
-                <label className={classes.label}>{bank.accountNo}</label>
-                <label className={classes.label}>{bank.expiration}</label>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={this.handleDeleteBankAccount.bind(this, bank.bankId)}
-                >
-                  X
-                </Button>
+                <label className="col-sm-3">{bank.accountNo}</label>
+                <label className="col-sm-3">{bank.expiration}</label>
+                <div className="col-sm-3">
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={this.handleDeleteBankAccount.bind(
+                      this,
+                      bank.bankId
+                    )}
+                    className={classes.button}
+                  >
+                    X
+                  </Button>
+                </div>
               </li>
             ))}
           </ul>

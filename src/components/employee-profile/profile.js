@@ -6,7 +6,7 @@ class Profile extends Component {
     return (
       <React.Fragment>
         <MyAppBar />
-        <div className="container-wrapper">Welcome to your profile!!!</div>
+        <div className="container-fluid">Welcome to your profile!!!</div>
       </React.Fragment>
     );
   }

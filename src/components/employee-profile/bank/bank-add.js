@@ -42,7 +42,7 @@ class BankAdd extends Component {
     return (
       <React.Fragment>
         <MyAppBar />
-        <div className="container-wrapper">
+        <div className="container-fluid">
           <h3>Add Bank Account</h3>
           <TextField
             id="bank_name"
@@ -72,6 +72,7 @@ class BankAdd extends Component {
               shrink: true
             }}
             onChange={this.handleChange("expiration")}
+            margin="normal"
           />
           <br />
           <br />
@@ -82,7 +83,9 @@ class BankAdd extends Component {
           >
             SAVE
           </Button>
-          <Link to="/bank">Back</Link>
+          <Link style={{ marginLeft: 100 }} to="/bank">
+            Back
+          </Link>
         </div>
       </React.Fragment>
     );
