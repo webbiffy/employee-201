@@ -14,6 +14,7 @@ function App() {
       <Route path="/bank" exact component={Bank} />
       <Route path="/bank/add" exact component={BankAdd} />
       <Route path="/bank/edit/:id" exact component={BankEdit} />
+      <Route path="*" exact component={Profile} />
     </Switch>
   );
 }

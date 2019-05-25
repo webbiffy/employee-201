@@ -29,7 +29,7 @@ class BankEdit extends Component {
     var toBeInserted = {
       bankId: this.state.bankId,
       name: this.state.name,
-      accountNo: this.state.account_no,
+      accountNo: this.state.accountNo,
       expiration: this.state.expiration
     };
 
